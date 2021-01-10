@@ -13,20 +13,10 @@ export default class GameSavingLoader {
       } catch {
         throw new Error('Ошибка!')
       }
-      
-    })
+    })()
   }
 }
 
-// const loader = new GameSavingLoader();
+const loader = new GameSavingLoader();
 
-// console.log(loader.load().then((response) => response));
-
-
-// return new Promise((resolve, reject) => {
-    //   const data = new Promise((resolve, reject) => {
-    //     resolve(read());
-    //   });
-    //   data.then((response) => console.log(json(response)));
-    //   resolve(data);
-    // });
+console.log(loader.load());
