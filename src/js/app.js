@@ -4,19 +4,8 @@ import json from './Parser';
 import read from './Reader';
 
 export default class GameSavingLoader {
-  load() {
-    return (async () => {
-      try {
-        const data = await read();
-        const value = await json(data)
-        return value;
-      } catch {
-        throw new Error('Ошибка!')
-      }
-    })()
+  async load() {
+    const response = await read();
+    return json(response);
   }
 }
-
-const loader = new GameSavingLoader();
-
-console.log(loader.load());
